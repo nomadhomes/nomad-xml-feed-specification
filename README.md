@@ -111,25 +111,22 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 
 * Balcony
 * Barbecue Area
-* Built in Wardrobes
 * Built-in Wardrobes
 * Children's Play Area
+* Children's Pool
 * Community Gym
 * Community Pool
 * Community Spa
-* Concierge
+* Concierge Service
 * Covered Parking
-* Gym
 * Kitchen Appliances
 * Maid Service
 * Pets Allowed
-* Pool
 * Private Garden
+* Private Gym
 * Private Jacuzzi
 * Private Pool
 * Security
-* Shared Gym
-* Shared Pool
 * Study
 * Walk-in Closet
 
