@@ -178,4 +178,6 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | price | currency | `token` | **`REQUIRED`** Currency code in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format. | `AED` |
 | size | units | `token` | **`REQUIRED`** Floor area size measurement units. Accepted values: `sqft`, `sqm`. | `sqft` |
 
+### XSD Schema
 
+See [schema.xsd](schema.xsd) for more details.

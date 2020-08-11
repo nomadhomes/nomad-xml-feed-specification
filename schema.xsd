@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="listings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="listing" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="updated_at" type="xs:dateTime"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="listing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reference_number" type="xs:token">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:minLength value="1"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="price" type="xs:decimal">
+          <xs:complexType>
+            <xs:attribute name="currency" type="xs:token"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="property_type" type="xs:token">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="apartment"/>
+              <xs:enumeration value="villa"/>
+              <xs:enumeration value="penthouse"/>
+              <xs:enumeration value="duplex"/>
+              <xs:enumeration value="townhouse"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="property_status" type="xs:token">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="completed"/>
+              <xs:enumeration value="off_plan"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="offering_type" type="xs:token">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="rent"/>
+              <xs:enumeration value="sale"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="size" type="xs:positiveInteger">
+          <xs:complexType>
+            <xs:attribute name="units" type="xs:positiveInteger"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bedrooms" type="xs:integer"/>
+        <xs:element name="bathrooms" type="xs:decimal"/>
+        <xs:element name="furnished" type="xs:token">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="furnished"/>
+              <xs:enumeration value="unfurnished"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="parking_spots" type="xs:integer"/>
+        <xs:element name="description" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="amenities">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="amenity" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="views">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="view" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="images">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="image" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="city" type="xs:string"/>
+        <xs:element name="community" type="xs:string"/>
+        <xs:element name="sub_community" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        <xs:element name="tower" type="xs:string"/>
+        <xs:element name="floor_number" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+        <xs:element name="unit_number" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        <xs:element name="latitude" minOccurs="0" maxOccurs="1" type="xs:decimal"/>
+        <xs:element name="longitude" minOccurs="0" maxOccurs="1" type="xs:decimal"/>
+        <xs:element name="agent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:token"/>
+              <xs:element name="email" type="xs:token"/>
+              <xs:element name="phone" type="xs:token"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="created_at" type="xs:dateTime"/>
+        <xs:element name="updated_at" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="amenity" type="xs:normalizedString">
+    <xs:simpleType>
+      <xs:restriction base="xs:normalizedString">
+        <xs:enumeration value="Balcony"/>
+        <xs:enumeration value="Barbecue Area"/>
+        <xs:enumeration value="Built-in Wardrobes"/>
+        <xs:enumeration value="Children's Play Area"/>
+        <xs:enumeration value="Children's Pool"/>
+        <xs:enumeration value="Community Gym"/>
+        <xs:enumeration value="Community Pool"/>
+        <xs:enumeration value="Community Spa"/>
+        <xs:enumeration value="Concierge Service"/>
+        <xs:enumeration value="Covered Parking"/>
+        <xs:enumeration value="Kitchen Appliances"/>
+        <xs:enumeration value="Maid Service"/>
+        <xs:enumeration value="Pets Allowed"/>
+        <xs:enumeration value="Private Garden"/>
+        <xs:enumeration value="Private Gym"/>
+        <xs:enumeration value="Private Jacuzzi"/>
+        <xs:enumeration value="Private Pool"/>
+        <xs:enumeration value="Security"/>
+        <xs:enumeration value="Study"/>
+        <xs:enumeration value="Walk-in Closet"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="view" type="xs:normalizedString">
+    <xs:simpleType>
+      <xs:restriction base="xs:normalizedString">
+        <xs:enumeration value="Atlantis"/>
+        <xs:enumeration value="Burj Al Arab"/>
+        <xs:enumeration value="Burj Khalifa"/>
+        <xs:enumeration value="Canal/Water"/>
+        <xs:enumeration value="City/Community"/>
+        <xs:enumeration value="Fountain"/>
+        <xs:enumeration value="Garden"/>
+        <xs:enumeration value="Golf"/>
+        <xs:enumeration value="Lake"/>
+        <xs:enumeration value="Landmark"/>
+        <xs:enumeration value="Marina"/>
+        <xs:enumeration value="Park"/>
+        <xs:enumeration value="Pool"/>
+        <xs:enumeration value="Sea"/>
+        <xs:enumeration value="Sheikh Zayed Road"/>
+        <xs:enumeration value="The Frame"/>
+        <xs:enumeration value="The Palm"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+ </xs:schema>
