@@ -62,6 +62,7 @@
           <xs:simpleType>
             <xs:restriction base="xs:token">
               <xs:enumeration value="furnished"/>
+              <xs:enumeration value="partly_furnished"/>
               <xs:enumeration value="unfurnished"/>
             </xs:restriction>
           </xs:simpleType>

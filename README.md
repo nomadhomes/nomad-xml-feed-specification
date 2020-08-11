@@ -83,7 +83,7 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | size | `positiveInteger` | **`REQUIRED`** Floor area size. | `2500` |
 | bedrooms | `integer` | **`REQUIRED`** Number of bedrooms. `0` or `0.5` for studio. | `4` |
 | bathrooms | `decimal` | **`REQUIRED`** Number of bathrooms, can include half size bathroom defined as half decimal, e.g. `2.5` which means 2 full bathrooms and a half bathroom. | `5.0` |
-| furnished | `token` | **`REQUIRED`** Accepted values: `furnished`, `unfurnished`. | `furnished` |
+| furnished | `token` | **`REQUIRED`** Accepted values: `furnished`, `unfurnished`, `partly_furnished`. | `furnished` |
 | parking_spots | `integer` | A number from 0 and up. | `1` |
 | description | `string` | Detailed description. Enclosed in `CDATA`. | `<![CDATA[description]]>` |
 | amenities | element with nodes | **`REQUIRED`** List of amenities as an array. ||
