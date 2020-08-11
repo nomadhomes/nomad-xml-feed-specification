@@ -175,7 +175,7 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | Element | Attribute | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | listings | updated_at | `dateTime` | **`REQUIRED`** Timestamp of the last update for the document. | `2020-08-30T09:30:10Z` |
-| listing | price | `token` | **`REQUIRED`** Currency code in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format. | `AED` |
-| listing | units | `token` | **`REQUIRED`** Floor area size measurement units. Accepted values: `sqft`, `sqm`. | `sqft` |
+| price | currency | `token` | **`REQUIRED`** Currency code in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format. | `AED` |
+| size | units | `token` | **`REQUIRED`** Floor area size measurement units. Accepted values: `sqft`, `sqm`. | `sqft` |
 
 
