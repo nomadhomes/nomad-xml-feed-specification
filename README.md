@@ -55,8 +55,8 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
       <image><![CDATA[https://your-domain.com/image_2.jpg]]></image>
     </images>
     <city><![CDATA[Dubai]]></city>
-    <community><![CDATA[Reem]]></community>
-    <sub_community><![CDATA[Mira Oasis]]></sub_community>
+    <location><![CDATA[Reem]]></location>
+    <sub_location><![CDATA[Mira Oasis]]></sub_location>
     <tower><![CDATA[Mira Oasis 2]]></tower>
     <floor_number>2</floor_number>
     <unit_number>21A</unit_number>
@@ -90,8 +90,8 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | views | element with nodes | **`REQUIRED`** List of views as an array. ||
 | images | element with nodes | **`REQUIRED`** List of **non-watermarked** images as an array. ||
 | city | `string` | **`REQUIRED`** City where property is located. Enclosed in `CDATA`. | `<![CDATA[Dubai]]>` |
-| community | `string` | **`REQUIRED`** Community where property is located. Enclosed in `CDATA`. | `<![CDATA[Reem]]>` |
-| sub_community | `string` | Sub-community where property is located. Enclosed in `CDATA`. | `<![CDATA[Mira Oasis]]>` |
+| location | `string` | **`REQUIRED`** Property location, also known as community. Enclosed in `CDATA`. | `<![CDATA[Reem]]>` |
+| sub_location | `string` | Property sub-location also known as sub-community. Enclosed in `CDATA`. | `<![CDATA[Mira Oasis]]>` |
 | tower | `string` | **`REQUIRED`** Tower where property is located. Enclosed in `CDATA`. | `<![CDATA[Mira Oasis 2]]>` |
 | floor_number | `integer` | Floor number. | `2` |
 | unit_number | `string` | Unit number of the property. | `21A` |

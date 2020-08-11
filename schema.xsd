@@ -90,8 +90,8 @@
           </xs:complexType>
         </xs:element>
         <xs:element name="city" type="xs:string"/>
-        <xs:element name="community" type="xs:string"/>
-        <xs:element name="sub_community" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        <xs:element name="location" type="xs:string"/>
+        <xs:element name="sub_location" minOccurs="0" maxOccurs="1" type="xs:string"/>
         <xs:element name="tower" type="xs:string"/>
         <xs:element name="floor_number" minOccurs="0" maxOccurs="1" type="xs:integer"/>
         <xs:element name="unit_number" minOccurs="0" maxOccurs="1" type="xs:string"/>
