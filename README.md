@@ -28,14 +28,21 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 #### listing
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <listings updated_at="2020-08-30T09:30:10Z">
   <listing>
     <reference_number>NH-R-3459</reference_number>
-    <price currency="AED">1200000.00</price>
+    <price>
+      <currency>AED</currency>
+      <value>1200000.00</value>
+    </price>
     <property_type>villa</property_type>
     <property_status>completed</property_status>
     <offering_type>sale</offering_type>
-    <size units="sqft">2500</size>
+    <size>
+      <units>sqft</units>
+      <value>2500</value>
+    </size>
     <bedrooms>4</bedrooms>
     <bathrooms>5</bathrooms>
     <furnished>furnished</furnished>
@@ -43,7 +50,7 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
     <description><![CDATA[Detailed description]]></description>
     <amenities>
       <amenity><![CDATA[Balcony]]></amenity>
-      <amenity><![CDATA[Pool]]></amenity>
+      <amenity><![CDATA[Study]]></amenity>
       <amenity><![CDATA[Pets Allowed]]></amenity>
     </amenities>
     <views>
@@ -76,11 +83,11 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | Element | Type | Description | Example Value |
 | --- | --- | --- | --- |
 | reference_number | `token` | **`REQUIRED`** **`UNIQUE`** Unique listing reference number. | `NH-R-3459` |
-| price | `decimal` | **`REQUIRED`** Price of the property and currency. | `1200000.00` |
+| price | element with nodes | **`REQUIRED`** Price of the property and currency. ||
 | property_type | `token` | **`REQUIRED`** Type of the property. Accepted values: `apartment`, `villa`, `penthouse`, `duplex`, `townhouse`. | `villa` |
 | property_status | `token` | **`REQUIRED`** Status of the property. Accepted values: `completed`, `off_plan`. | `off_plan` |
 | offering_type | `token` | **`REQUIRED`** Type of the offering. Accepted values: `rent`, `sale`. | `sale` |
-| size | `positiveInteger` | **`REQUIRED`** Floor area size. | `2500` |
+| size | element with nodes | **`REQUIRED`** Floor area size. ||
 | bedrooms | `integer` | **`REQUIRED`** Number of bedrooms. `0` or `0.5` for studio. | `4` |
 | bathrooms | `decimal` | **`REQUIRED`** Number of bathrooms, can include half size bathroom defined as half decimal, e.g. `2.5` which means 2 full bathrooms and a half bathroom. | `5.0` |
 | furnished | `token` | **`REQUIRED`** Accepted values: `furnished`, `unfurnished`, `partly_furnished`. | `furnished` |
@@ -100,6 +107,20 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | agent | element with nodes | **`REQUIRED`** Agent contact information. ||
 | created_at | `dateTime` | **`REQUIRED`** Timestamp of the listing creation. | `2020-08-30T09:29:10Z` |
 | updated_at | `dateTime` | **`REQUIRED`** Timestamp of the last listing update. | `2020-08-30T09:30:10Z` |
+
+#### price
+
+| Element | Type | Description | Example Value |
+| --- | --- | --- | --- |
+| currency | `token` | **`REQUIRED`** Currency code in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format. | `AED` |
+| value | `decimal` | **`REQUIRED`** Price of the property. | `1200000.00` |
+
+#### size
+
+| Element | Type | Description | Example Value |
+| --- | --- | --- | --- |
+| units | `token` | **`REQUIRED`** Floor area size measurement units. Accepted values: `sqft`, `sqm`. | `sqft` |
+| value | `positiveInteger` | **`REQUIRED`** Floor area size. | `2500` |
 
 #### amenities
 
@@ -175,8 +196,6 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | Element | Attribute | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | listings | updated_at | `dateTime` | **`REQUIRED`** Timestamp of the last update for the document. | `2020-08-30T09:30:10Z` |
-| price | currency | `token` | **`REQUIRED`** Currency code in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format. | `AED` |
-| size | units | `token` | **`REQUIRED`** Floor area size measurement units. Accepted values: `sqft`, `sqm`. | `sqft` |
 
 ### XSD Schema
 

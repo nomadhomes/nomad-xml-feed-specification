@@ -12,19 +12,22 @@
   <xs:element name="listing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="reference_number" type="xs:token">
+        <xs:element name="reference_number">
           <xs:simpleType>
             <xs:restriction base="xs:token">
               <xs:minLength value="1"/>
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="price" type="xs:decimal">
+        <xs:element name="price">
           <xs:complexType>
-            <xs:attribute name="currency" type="xs:token"/>
+            <xs:sequence>
+              <xs:element name="currency" type="xs:token"/>
+              <xs:element name="value" type="xs:token"/>
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="property_type" type="xs:token">
+        <xs:element name="property_type">
           <xs:simpleType>
             <xs:restriction base="xs:token">
               <xs:enumeration value="apartment"/>
@@ -35,7 +38,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="property_status" type="xs:token">
+        <xs:element name="property_status">
           <xs:simpleType>
             <xs:restriction base="xs:token">
               <xs:enumeration value="completed"/>
@@ -43,7 +46,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="offering_type" type="xs:token">
+        <xs:element name="offering_type">
           <xs:simpleType>
             <xs:restriction base="xs:token">
               <xs:enumeration value="rent"/>
@@ -51,14 +54,24 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="size" type="xs:positiveInteger">
+        <xs:element name="size">
           <xs:complexType>
-            <xs:attribute name="units" type="xs:positiveInteger"/>
+            <xs:sequence>
+              <xs:element name="units">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="sqft"/>
+                    <xs:enumeration value="sqm"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="value" type="xs:positiveInteger"/>
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="bedrooms" type="xs:integer"/>
         <xs:element name="bathrooms" type="xs:decimal"/>
-        <xs:element name="furnished" type="xs:token">
+        <xs:element name="furnished">
           <xs:simpleType>
             <xs:restriction base="xs:token">
               <xs:enumeration value="furnished"/>
@@ -113,7 +126,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="amenity" type="xs:normalizedString">
+  <xs:element name="amenity">
     <xs:simpleType>
       <xs:restriction base="xs:normalizedString">
         <xs:enumeration value="Balcony"/>
@@ -140,7 +153,7 @@
     </xs:simpleType>
   </xs:element>
 
-  <xs:element name="view" type="xs:normalizedString">
+  <xs:element name="view">
     <xs:simpleType>
       <xs:restriction base="xs:normalizedString">
         <xs:enumeration value="Atlantis"/>
