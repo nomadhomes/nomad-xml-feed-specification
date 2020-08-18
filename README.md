@@ -187,9 +187,9 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 
 | Element | Type | Description | Example Value |
 | --- | --- | --- | --- |
-| name | `token` | **`REQUIRED`** Agent name. Enclosed in `CDATA`. | `<![CDATA[John Doe]]>` |
-| email | `token` | **`REQUIRED`** Agent email. | `john@doe-properties.com` |
-| phone | `token` | **`REQUIRED`** Agent phone. | `971-55-555-5555` |
+| name | `token` | Agent name. Enclosed in `CDATA`. | `<![CDATA[John Doe]]>` |
+| email | `token` | Agent email. | `john@doe-properties.com` |
+| phone | `token` | Agent phone. | `971-55-555-5555` |
 
 ### Attributes
 
