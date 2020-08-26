@@ -94,7 +94,7 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | parking_spots | `integer` | A number from 0 and up. | `1` |
 | description | `string` | Detailed description. Enclosed in `CDATA`. | `<![CDATA[description]]>` |
 | amenities | element with nodes | **`REQUIRED`** List of amenities as an array. ||
-| views | element with nodes | **`REQUIRED`** List of views as an array. ||
+| views | element with nodes | List of views as an array. ||
 | images | element with nodes | **`REQUIRED`** List of **non-watermarked** images as an array. ||
 | city | `string` | **`REQUIRED`** City where property is located. Enclosed in `CDATA`. | `<![CDATA[Dubai]]>` |
 | location | `string` | **`REQUIRED`** Property location, also known as community. Enclosed in `CDATA`. | `<![CDATA[Reem]]>` |
@@ -104,7 +104,7 @@ Reference [W3C XML Schema Definition Language](https://www.w3.org/TR/xmlschema11
 | unit_number | `string` | Unit number of the property. | `21A` |
 | latitude | `decimal` | Property location latitude. | `25.01658988` |
 | longitude | `decimal` | Property location longitude. | `55.29835291` |
-| agent | element with nodes | **`REQUIRED`** Agent contact information. ||
+| agent | element with nodes | Agent contact information. ||
 | created_at | `dateTime` | **`REQUIRED`** Timestamp of the listing creation. | `2020-08-30T09:29:10Z` |
 | updated_at | `dateTime` | **`REQUIRED`** Timestamp of the last listing update. | `2020-08-30T09:30:10Z` |
 

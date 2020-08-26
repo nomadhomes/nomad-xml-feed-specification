@@ -85,7 +85,7 @@
         <xs:element name="amenities">
           <xs:complexType>
             <xs:sequence>
-              <xs:element ref="amenity" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element ref="amenity" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -111,7 +111,7 @@
         <xs:element name="unit_number" minOccurs="0" maxOccurs="1" type="xs:string"/>
         <xs:element name="latitude" minOccurs="0" maxOccurs="1" type="xs:decimal"/>
         <xs:element name="longitude" minOccurs="0" maxOccurs="1" type="xs:decimal"/>
-        <xs:element name="agent">
+        <xs:element name="agent" minOccurs="0">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="name" type="xs:token"/>
